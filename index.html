@@ -1,56 +1,322 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
+
+    <title>Gustavo | Meu Primeiro Site</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: #f2f2f2;
-            padding: 50px;
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 14px;
         }
 
         h1 {
-            color: #222;
-            font-size: 42px;
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        p {
-            color: #555;
-            font-size: 22px;
+        h1 span {
+            color: #38bdf8;
         }
 
-        button {
-            background: #222;
-            color: white;
-            border: none;
-            padding: 18px 35px;
+        .description {
+            color: #d1d5db;
             font-size: 20px;
-            border-radius: 10px;
-            cursor: pointer;
+            line-height: 1.6;
+            margin-bottom: 35px;
         }
 
-        button:hover {
-            background: #444;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            background: #7dd3fc;
+        }
+
+        .secondary {
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: #334155;
+        }
+
+        section {
+            padding: 70px 8%;
+            background: #f8fafc;
+            color: #111827;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            max-width: 650px;
+            margin: auto;
+            color: #4b5563;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+        }
+
+        footer {
+            background: #0f172a;
+            text-align: center;
+            padding: 30px 20px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Olá! Eu sou o Gustavo 👋</h1>
+    <header>
+        <div class="logo">
+            Gustavo<span>.</span>
+        </div>
 
-    <p>
-        Estou aprendendo programação e construindo meus primeiros projetos.
-    </p>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#projeto">Projeto</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-    <button onclick="alert('Obrigado por visitar meu site! 🚀')">
-        Meu primeiro botão
-    </button>
+    <main>
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="tag">
+                    🚀 Meu primeiro projeto
+                </div>
+
+                <h1>
+                    Olá, eu sou o <span>Gustavo!</span>
+                </h1>
+
+                <p class="description">
+                    Estou começando minha jornada na programação,
+                    aprendendo HTML, CSS, Git e GitHub.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button primary" href="#sobre">
+                        Conheça meu projeto
+                    </a>
+
+                    <a class="button secondary"
+                       href="https://github.com/gustavolopesgl327-spec">
+                        Meu GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <section id="sobre">
+
+            <h2>Sobre mim</h2>
+
+            <p>
+                Este é meu primeiro site desenvolvido enquanto
+                estou aprendendo programação. Estou começando
+                do zero e evoluindo a cada novo projeto.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>💻 HTML</h3>
+                    <p>
+                        Aprendendo a criar a estrutura
+                        das páginas da web.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 CSS</h3>
+                    <p>
+                        Aprendendo a criar designs,
+                        cores e layouts.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Git & GitHub</h3>
+                    <p>
+                        Aprendendo a guardar, organizar
+                        e publicar meus projetos.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="projeto">
+
+            <h2>Meu primeiro projeto</h2>
+
+            <p>
+                Esse projeto representa o começo da minha
+                jornada na programação. Em breve vou adicionar
+                novos projetos e novas tecnologias aqui.
+            </p>
+
+        </section>
+
+        <section id="contato">
+
+            <h2>Vamos evoluir 🚀</h2>
+
+            <p>
+                Este site está em desenvolvimento.
+                Novidades serão adicionadas conforme
+                eu continuar aprendendo programação.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Gustavo — Meu Primeiro Projeto
+    </footer>
 
 </body>
+
 </html>
